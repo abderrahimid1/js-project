@@ -1,0 +1,89 @@
+Algorithm Exercise
+
+Begin
+
+// ------------------
+// Problem 1
+// ------------------
+
+Declare Set1[4] = [3,1,7,9]
+Declare Set2[5] = [2,4,1,9,3]
+
+sum ← 0
+
+For i ← 0 to 3
+    found ← false
+    
+    For j ← 0 to 4
+        If Set1[i] = Set2[j] then
+            found ← true
+        EndIf
+    EndFor
+
+    If found = false then
+        sum ← sum + Set1[i]
+    EndIf
+EndFor
+
+
+For i ← 0 to 4
+    found ← false
+    
+    For j ← 0 to 3
+        If Set2[i] = Set1[j] then
+            found ← true
+        EndIf
+    EndFor
+
+    If found = false then
+        sum ← sum + Set2[i]
+    EndIf
+EndFor
+
+Print "Sum of distinct elements = ", sum
+
+
+// ------------------
+// Problem 2
+// ------------------
+
+Procedure dot_product(v1[], v2[], n, ps)
+
+    ps ← 0
+    
+    For i ← 0 to n-1
+        ps ← ps + (v1[i] * v2[i])
+    EndFor
+
+EndProcedure
+
+
+// Checking Orthogonal vectors
+
+Read n
+
+For k ← 1 to n
+
+    Read m
+
+    Declare v1[m], v2[m]
+
+    For i ← 0 to m-1
+        Read v1[i]
+    EndFor
+
+    For i ← 0 to m-1
+        Read v2[i]
+    EndFor
+
+    Call dot_product(v1, v2, m, ps)
+
+    If ps = 0 then
+        Print "Vectors are Orthogonal"
+    Else
+        Print "Vectors are NOT Orthogonal"
+    EndIf
+
+EndFor
+
+End
