@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Shopping Cart</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+}
+
+.item{
+border:1px solid black;
+padding:20px;
+margin:20px;
+}
+
+button{
+padding:5px 10px;
+margin:5px;
+}
+
+.liked{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Shopping Cart</h1>
+
+<div class="item">
+
+<h3>Product 1</h3>
+
+<p class="price">100</p>
+
+<button class="minus">-</button>
+<span class="quantity">1</span>
+<button class="plus">+</button>
+
+<button class="delete">Delete</button>
+<button class="like">❤</button>
+
+</div>
+
+<div class="item">
+
+<h3>Product 2</h3>
+
+<p class="price">200</p>
+
+<button class="minus">-</button>
+<span class="quantity">1</span>
+<button class="plus">+</button>
+
+<button class="delete">Delete</button>
+<button class="like">❤</button>
+
+</div>
+
+<h2>Total : <span id="total">300</span> $</h2>
+
+<script>
+
+let plus = document.querySelectorAll(".plus")
+let minus = document.querySelectorAll(".minus")
+let quantity = document.querySelectorAll(".quantity")
+let price = document.querySelectorAll(".price")
+let deleteBtn = document.querySelectorAll(".delete")
+let like = document.querySelectorAll(".like")
+let total = document.getElementById("total")
+
+// زر +
+for(let i=0;i<plus.length;i++){
+
+plus[i].addEventListener("click",function(){
+
+quantity[i].innerHTML++
+
+totalPrice()
+
+})
+
+}
+
+// زر -
+for(let i=0;i<minus.length;i++){
+
+minus[i].addEventListener("click
